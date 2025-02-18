@@ -1,0 +1,306 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar Chatbot Documentation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 95%;
+            margin: 20px auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tablink {
+            background-color: #eee;
+            border: none;
+            color: #333;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tablink:hover {
+            background-color: #ddd;
+        }
+
+        .tablink.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .tabcontent h3 {
+            margin-top: 0;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Scholar Chatbot Documentation</h1>
+
+        <h2>1. Introduction</h2>
+        <p>This document provides an overview of the Scholar Chatbot project, including its setup, configuration, usage, and contribution guidelines.</p>
+
+        <h2>2. Folder Structure</h2>
+        <pre>
+END-TO-END-SCHOLAR-CHATBOT-USING-LLAMA2
+├── data/
+│   └── SlamonetalSCIENCE1987.pdf (example PDF)
+├── llama.cpp/
+├── model/
+│   └── llama-2-7b-chat.ggmlv3.q8_0.bin (model file)
+├── research/
+│   ├── instruction.txt
+│   ├── trials.ipynb
+│   └── Scholar_Chatbot.egg-info/
+├── src/
+│   ├── __pycache__/
+│   ├── helper.py
+│   └── prompt.py
+├── templates/ (HTML templates for Flask or Streamlit-based UI)
+├── static/
+│   └── style.css
+├── .env (environment variables)
+├── app.py (alternative application entrypoint)
+├── app2.py (main application)
+├── documentation.html (this documentation file)
+├── requirements.txt
+├── README.md
+└── test.py
+        </pre>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Scholar Chatbot Documentation</title>
+            <style>
+                body {
+                    font-family: sans-serif;
+                    line-height: 1.6;
+                    margin: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    min-height: 100vh;
+                }
+        
+                .container {
+                    max-width: 900px;
+                    width: 95%;
+                    margin: 20px auto;
+                }
+        
+                .tab {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+        
+                .tab button {
+                    background-color: #ddd;
+                    border: none;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    font-size: 16px;
+                    margin: 5px;
+                }
+        
+                .tab button:hover,
+                .tab button.active {
+                    background-color: #007bff;
+                    color: white;
+                }
+        
+                .tabcontent {
+                    display: none;
+                    padding: 20px;
+                    border: 1px solid #ddd;
+                    background-color: #f9f9f9;
+                    width: 100%;
+                }
+        
+                .tabcontent.active {
+                    display: block;
+                }
+            </style>
+        </head>
+        
+        <body>
+            <div class="container">
+            <h2> Proposed Solutions</h2>
+        
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'PrototypeDevelopment')">Prototype Development</button>
+                    <button class="tablinks" onclick="openTab(event, 'EvaluationApproach')">Evaluation Approach</button>
+                    <button class="tablinks" onclick="openTab(event, 'Assumptions')">Assumptions</button>
+                    <button class="tablinks" onclick="openTab(event, 'Reproducibility')">Reproducibility</button>
+                </div>
+        
+                <div id="PrototypeDevelopment" class="tabcontent active">
+                    <h3>Prototype Development</h3>
+                    <p><strong>Technology Stack:</strong> Implemented in Python using Llama 2 (via CTransformers), which is an open-source LLM capable of understanding scholarly context.</p>
+                    <p><strong>Functionality:</strong> The chatbot handles a wide range of questions related to the publication. It extracts relevant content from local PDF data and provides contextually accurate answers.</p>
+                </div>
+        
+                <div id="EvaluationApproach" class="tabcontent">
+                    <h3>Evaluation Approach</h3>
+                    <p><strong>Business Metrics:</strong> Key KPIs include response accuracy, user satisfaction, and response time. This ensures the chatbot meets academic or enterprise needs.</p>
+                    <p><strong>Testing:</strong> The system is tested with diverse queries to ensure it accurately handles various research questions and maintains consistency across different datasets.</p>
+                </div>
+        
+                <div id="Assumptions" class="tabcontent">
+                    <h3>Assumptions</h3>
+                    <p>The chatbot assumes that input documents are well-structured academic papers and that queries align with the document's context.</p>
+                    <p>It also assumes that the Llama 2 model can effectively generalize based on the provided data without requiring fine-tuning.</p>
+                </div>
+        
+                <div id="Reproducibility" class="tabcontent">
+                    <h3>Reproducibility</h3>
+                    <p>To ensure reproducibility, the chatbot setup includes:</p>
+                    <ul>
+                        <li>Predefined model versions and dependencies listed in <code>requirements.txt</code>.</li>
+                        <li>Consistent dataset handling to maintain reliable response generation.</li>
+                        <li>Clear documentation for re-running experiments and evaluating performance.</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <script>
+                function openTab(evt, tabName) {
+                    var i, tabcontent, tablinks;
+                    
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                        tabcontent[i].classList.remove("active");
+                    }
+        
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].classList.remove("active");
+                    }
+        
+                    document.getElementById(tabName).style.display = "block";
+                    document.getElementById(tabName).classList.add("active");
+                    evt.currentTarget.classList.add("active");
+                }
+        
+                document.getElementById("PrototypeDevelopment").style.display = "block";
+            </script>
+        </body>
+        </html>
+        <h2>3. Installation</h2>
+        <p>Clone the repository:</p>
+        <pre><code>git clone https://github.com/Fikrewold/SciScholar-ChatBot-using-Lllama2.git</code></pre>
+        <p>Navigate to the project folder:</p>
+        <pre><code>cd SciScholar-ChatBot-using-Lllama2</code></pre>
+        <p>Create a virtual environment (optional but recommended):</p>
+        <pre><code>python -m venv venv
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\activate     # Windows
+</code></pre>
+        <p>Install dependencies:</p>
+        <pre><code>pip install -r requirements.txt</code></pre>
+        <p>Set up environment variables:</p>
+        <p>Copy or rename <code>.env.example</code> to <code>.env</code>, then fill in your keys (e.g., <code>PINECONE_API_KEY</code>, etc.) if you plan to use a vector DB.</p>
+        <p>Download or place the Llama 2 model file:</p>
+        <p>Ensure <code>llama-2-7b-chat.ggmlv3.q8_0.bin</code> (or your chosen variant) is in the root folder or update paths accordingly.</p>
+
+        <h2>4. Usage</h2>
+        <p>Run the main application:</p>
+        <pre><code>python app2.py</code></pre>
+        <p>This starts the Scholar-ChatBot. By default, it may run on <code>localhost:8080</code> (or <code>127.0.0.1:8080</code>) in debug mode.</p>
+        <p>Open your browser and visit:</p>
+        <pre><code>http://localhost:8080</code></pre>
+        <p>or the specified URL in your terminal output.</p>
+        <p>Ask questions or chat:</p>
+        <p>Use the web interface to query the chatbot. It will retrieve relevant documents (if integrated with Pinecone or a local vector store) and generate responses using the Llama 2 model via CTransformers.</p>
+
+        <h2>5. Configuration & Customization</h2>
+        <p>The main code for your chatbot logic resides in <code>app2.py</code> and the helper modules in <code>src/helper.py</code> and <code>src/prompt.py</code>. You can adjust:</p>
+        <ul>
+            <li>Model path in <code>app2.py</code> if you rename or relocate the Llama 2 model file.</li>
+            <li>Embeddings or vector store in <code>app2.py</code> to use FAISS, Pinecone, or others.</li>
+            <li>Prompt templates in <code>src/prompt.py</code> to control how the model is prompted.</li>
+        </ul>
+
+        <h2>6. Troubleshooting</h2>
+        <ul>
+            <li>
+                <p><strong>Model path issues:</strong></p>
+                <p>Ensure your <code>model/llama-2-7b-chat.ggmlv3.q8_0.bin</code> path is correct. If you see file not found errors, update the path in your code or rename the file to match.</p>
+            </li>
+            <li>
+                <p><strong>Environment variables:</strong></p>
+                <p>If you’re using a vector DB like Pinecone, verify your <code>.env</code> file is loaded and contains valid keys. Check logs if connection fails.</p>
+            </li>
+            <li>
+                <p><strong>Memory constraints:</strong></p>
+                <p>Llama 2 can be large. Ensure your system meets the RAM requirements for the chosen model. If you’re on limited hardware, use a smaller quantized model.</p>
+            </li>
+        </ul>
+
+        <h2>7. Contributing</h2>
+        <p>Contributions are welcome! Feel free to submit a pull request or open an issue for feature requests or bug reports.</p>
+
+        <h2>8. License</h2>
+        <p>Check the <code>LICENSE</code> file in this repository for details. If none is specified, treat this as a proprietary project.</p>
+

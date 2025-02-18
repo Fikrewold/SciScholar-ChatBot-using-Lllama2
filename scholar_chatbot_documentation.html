@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scholar-ChatBot Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 1em;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+    .folder-structure {
+      background-color: #f9f9f9;
+      padding: 1em;
+      border-left: 4px solid #ccc;
+    }
+    .file {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Scholar-ChatBot Documentation</h1>
+<p>
+  Welcome to the documentation for the <strong>Scholar-ChatBot</strong> project, 
+  an end-to-end solution for question-answering and chat-based interactions using 
+  <em>Llama 2</em> and supporting libraries such as <em>LangChain</em>.
+</p>
+
+<hr />
+
+<h2>1. Project Overview</h2>
+<p>
+  The Scholar-ChatBot is designed to provide Q/A capabilities on academic or research-oriented data. 
+  It leverages the <em>Llama 2</em> model through <em>CTransformers</em>, 
+  uses <em>LangChain</em> for prompt management and retrieval, 
+  and can optionally integrate with vector databases like <em>Pinecone</em> or <em>FAISS</em>.
+</p>
+
+<hr />
+
+<h2>2. Folder Structure</h2>
+<div class="folder-structure">
+  <strong>END-TO-END-SCHOLAR-CHATBOT-USING-LLAMA2</strong><br />
+  ┣ <span class="file">data/</span><br />
+  ┣ <span class="file">llama.cpp/</span><br />
+  ┣ <span class="file">llama-2-7b-chat.ggmlv3.q8_0.bin</span> <em>(model file)</em><br />
+  ┣ <span class="file">research/</span><br />
+  ┣ <span class="file">trials.ipynb</span><br />
+  ┣ <span class="file">scholar_chatbot.egg-info/</span><br />
+  ┣ <span class="file">src/</span><br />
+  &emsp; ┣ <span class="file">__pycache__/</span><br />
+  &emsp; ┣ <span class="file">helper.py</span><br />
+  &emsp; ┗ <span class="file">prompt.py</span><br />
+  ┣ <span class="file">style.css</span><br />
+  ┣ <span class="file">templates/</span> <em>(Flask templates folder, if used)</em><br />
+  ┣ <span class="file">.env</span> <em>(environment variables)</em><br />
+  ┣ <span class="file">app2.py</span> <em>(main application)</em><br />
+  ┣ <span class="file">requirements.txt</span><br />
+  ┣ <span class="file">README.md</span><br />
+  ┗ <span class="file">test.py</span>
+</div>
+
+<hr />
+
+<h2>3. Installation</h2>
+<ol>
+  <li>
+    <strong>Clone the repository:</strong><br />
+    <code>git clone https://github.com/username/END-TO-END-SCHOLAR-CHATBOT-USING-LLAMA2.git</code>
+  </li>
+  <li>
+    <strong>Navigate to the project folder:</strong><br />
+    <code>cd END-TO-END-SCHOLAR-CHATBOT-USING-LLAMA2</code>
+  </li>
+  <li>
+    <strong>Create a virtual environment (optional but recommended):</strong><br />
+    <code>python -m venv venv</code><br />
+    <code>source venv/bin/activate</code> <em>(Mac/Linux)</em><br />
+    <code>venv\Scripts\activate</code> <em>(Windows)</em>
+  </li>
+  <li>
+    <strong>Install dependencies:</strong><br />
+    <code>pip install -r requirements.txt</code>
+  </li>
+  <li>
+    <strong>Set up environment variables:</strong><br />
+    Copy or rename <code>.env.example</code> to <code>.env</code>, then fill in your keys 
+    (e.g., <code>PINECONE_API_KEY</code>, etc.) if you plan to use a vector DB.
+  </li>
+  <li>
+    <strong>Download or place the Llama 2 model file:</strong><br />
+    Ensure <code>llama-2-7b-chat.ggmlv3.q8_0.bin</code> (or your chosen variant) is 
+    in the root folder or update paths accordingly.
+  </li>
+</ol>
+
+<hr />
+
+<h2>4. Usage</h2>
+<ol>
+  <li>
+    <strong>Run the main application:</strong><br />
+    <code>python app2.py</code><br />
+    This starts the Scholar-ChatBot. By default, it may run on <code>localhost:8080</code> 
+    (or <code>127.0.0.1:8080</code>) in debug mode.
+  </li>
+  <li>
+    <strong>Open your browser and visit:</strong><br />
+    <code>http://localhost:8080</code><br />
+    or the specified URL in your terminal output.
+  </li>
+  <li>
+    <strong>Ask questions or chat:</strong><br />
+    Use the web interface to query the chatbot. It will retrieve relevant documents 
+    (if integrated with Pinecone or a local vector store) and generate responses 
+    using the Llama 2 model via <em>CTransformers</em>.
+  </li>
+</ol>
+
+<hr />
+
+<h2>5. Configuration & Customization</h2>
+<p>
+  The main code for your chatbot logic resides in <code>app2.py</code> and the helper 
+  modules in <code>src/helper.py</code> and <code>src/prompt.py</code>. 
+  You can adjust:
+</p>
+<ul>
+  <li><strong>Model path</strong> in <code>app2.py</code> if you rename or relocate the Llama 2 model file.</li>
+  <li><strong>Embeddings or vector store</strong> in <code>app2.py</code> to use FAISS, Pinecone, or others.</li>
+  <li><strong>Prompt templates</strong> in <code>src/prompt.py</code> to control how the model is prompted.</li>
+</ul>
+
+<hr />
+
+<h2>6. Troubleshooting</h2>
+<ul>
+  <li>
+    <strong>Model path issues:</strong> 
+    Ensure your <code>model/llama-2-7b-chat.ggmlv3.q8_0.bin</code> path is correct. 
+    If you see file not found errors, update the path in your code or rename the file to match.
+  </li>
+  <li>
+    <strong>Environment variables:</strong> 
+    If you’re using a vector DB like Pinecone, verify your <code>.env</code> file is loaded and 
+    contains valid keys. Check logs if connection fails.
+  </li>
+  <li>
+    <strong>Memory constraints:</strong> 
+    Llama 2 can be large. Ensure your system meets the RAM requirements for the chosen model. 
+    If you’re on limited hardware, use a smaller quantized model.
+  </li>
+</ul>
+
+<hr />
+
+<h2>7. Contributing</h2>
+<p>
+  Contributions are welcome! Feel free to submit a pull request or open an issue 
+  for feature requests or bug reports.
+</p>
+
+<hr />
+
+<h2>8. License</h2>
+<p>
+  Check the <code>LICENSE</code> file in this repository for details. If none is specified, 
+  treat this as a proprietary project.
+</p>
+
+<hr />
+
+<p style="text-align:center;">
+  &copy; 2025 Scholar-ChatBot Project. All rights reserved.
+</p>
+
+</body>
+</html>

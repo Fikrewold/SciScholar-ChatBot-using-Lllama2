@@ -1,0 +1,18 @@
+
+sentence-transformers
+langchain
+flask
+pypdf
+python-dotenv
+pinecone[grpc]
+langchain-pinecone
+langchain_community
+langchain_openai
+langchain_experimental
+
+#langchain
+openai
+huggingface_hub
+python-dotenv
+streamlit
+-e .
