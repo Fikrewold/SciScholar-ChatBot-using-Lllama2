@@ -1,4 +1,13 @@
-# End-to-end-Medical-Chatbot-using-Llama2
+# Scholar-Chatbot-using-Llama2
+
+Scholar Chatbot is an AI-powered assistant designed to help researchers, students, and academics interact with scholarly documents. Built using Llama 2 and CTransformers, this chatbot can extract relevant content from PDFs and provide contextually accurate answers to research-related queries. It supports natural language processing for intelligent search and conversation, making it a valuable tool for navigating academic publications.
+
+Features:
+✅ AI-driven question answering based on research papers
+✅ PDF content extraction for scholarly insights
+✅ Customizable prompt engineering for better responses
+✅ Local and cloud deployment options
+✅ Optimized for efficiency and accuracy
 
 # How to run?
 ### STEPS:
@@ -12,7 +21,7 @@ Project repo: https://github.com/
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n ScholarBot python=3.10 -y
+conda create -n ScholarBot python=3.9 -y
 ```
 
 ```bash
@@ -43,6 +52,7 @@ llama-2-7b-chat.ggmlv3.q4_0.bin
 
 ## From the following link:
 https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
+
 ```
 
 ```bash
@@ -52,7 +62,7 @@ python store_index.py
 
 ```bash
 # Finally run the following command
-python app.py
+python app2.py
 ```
 
 Now,
