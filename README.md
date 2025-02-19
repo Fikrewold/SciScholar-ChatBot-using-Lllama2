@@ -3,10 +3,10 @@
 Scholar Chatbot is an AI-powered assistant designed to help researchers, students, and academics interact with scholarly documents. Built using Llama 2 and CTransformers, this chatbot can extract relevant content from PDFs and provide contextually accurate answers to research-related queries. It supports natural language processing for intelligent search and conversation, making it a valuable tool for navigating academic publications.
 
 Features:
-✅ AI-driven question answering based on research papers
-✅ PDF content extraction for scholarly insights
-✅ Customizable prompt engineering for better responses
-✅ Local and cloud deployment options
+✅ AI-driven question answering based on research papers\
+✅ PDF content extraction for scholarly insights\
+✅ Customizable prompt engineering for better responses\
+✅ Local and cloud deployment options\
 ✅ Optimized for efficiency and accuracy
 
 # How to run?
